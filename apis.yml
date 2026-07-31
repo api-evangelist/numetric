@@ -1,7 +1,22 @@
 aid: numetric
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/numetric.png
 name: Numetric
-description: Numetric is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Numetric operates a cloud data-analytics platform exposed through the Numetric REST API
+  (api.numetric.com) alongside a developer portal and an Intercom-hosted help center for support. It is
+  a portfolio company of Insight Partners, added to the API Evangelist network and enriched from its
+  public API surface. The public API is authentication-gated and the marketing site is bot-protected,
+  so this profile captures the verified developer, API, and support surfaces discovered by live probes.
 url: https://raw.githubusercontent.com/api-evangelist/numetric/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,15 +26,38 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Analytics
+- Data
+- SaaS
+- API
+apis:
+- name: Numetric API
+  description: Numetric's authentication-gated REST API, served from api.numetric.com. The base host
+    responds with a Numetric API banner and requires credentials on every path.
+  humanURL: https://www.numetric.com/
+  baseURL: https://api.numetric.com
+  properties:
+  - type: DeveloperPortal
+    url: https://developer.numetric.com/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 0
+  pass: local-v1
 common:
+- type: DomainSecurity
+  url: security/numetric-domain-security.yml
 - type: Website
   url: http://www.numetric.com/
+- type: DeveloperPortal
+  url: https://developer.numetric.com/
+- type: Support
+  url: https://support.numetric.com/en/
